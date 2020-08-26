@@ -4,9 +4,9 @@
 
 - Open a shell and change to the boltshop directory.
 
-- From your shell, run  `bolt command run 'write-output "hello world!"' –t windows`
+- From your shell, run  `bolt command run –t windows 'write-output "hello world!"' `
 
-- From your shell, run `bolt script run examples/helloworld.ps1 --targets windows`
+- From your shell, run `bolt script run --targets windows examples/helloworld.ps1 `
 
 Sample Output:
 
