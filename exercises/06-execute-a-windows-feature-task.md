@@ -1,4 +1,4 @@
-# Exercise #6 - Execite a Windows Feature Task
+# Exercise #6 - Execute a Windows Feature Task
 
 ## Steps
 
@@ -6,6 +6,6 @@
 
   - Run bolt task show boltshop::windowsfeature
 
-  - Run the following: `bolt task run boltshop::windowsfeature --targets www action=install feature=web-webserver`
+  - Run the following: `bolt task run --targets www boltshop::windowsfeature  action=install feature=web-webserver`
 
   - When completed, visit `http://<your_webserver>`
