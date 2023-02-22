@@ -1,6 +1,9 @@
-plan windows-boltshop::upgrade_git (
+plan windows_boltshop::update_git (
   TargetSpec $targets,
-  Enum['1:2.17.0-1ubuntu1', '1:2.17.1-1ubuntu0.4'] $version,
+  Enum['dev', 'prod'] $environment,
 ) {
-  run_task(‘package’, $targets, name => ‘git’, action => ‘upgrade’, version => $version)
+  # Use puppetdb to find the nodes from the “other” team's web cluster
+  $query = [from, nodes, ['=', [fact, env], $environment]]
+  $selected_nodes = puppetdb_query($query).map() |$target| { $target[certname] }
+  run_task('puppet_agent::version', $selected_nodes)
 }
