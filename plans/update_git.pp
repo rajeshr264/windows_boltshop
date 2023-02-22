@@ -1,5 +1,4 @@
 plan windows_boltshop::update_git (
-  TargetSpec $targets,
   Enum['dev', 'prod'] $environment,
 ) {
   # Use puppetdb to find the nodes from the “other” team's web cluster
