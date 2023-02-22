@@ -1,9 +1,13 @@
-{  
-	"description": "Say Hello World!",  
-	"parameters": {  
-  	"name": {  
-    	"description": "The name to say hello to. Defaults to 'World'.",  
-    	"type": "Optional[String]"  
-  	}     
-	}
+{
+        "description": "Say Hello World!",
+        "implementations": [
+        {"name": "helloworld.sh", "requirements": ["shell"]},
+        {"name": "helloworld.ps1", "requirements": ["powershell"]}
+        ],
+        "parameters": {
+          "name": {
+          "description": "The name to say hello to. Defaults to 'World'.",
+          "type": "Optional[String]"
+         }
+        }
  }
