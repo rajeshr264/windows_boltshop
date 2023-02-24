@@ -9,4 +9,6 @@ plan windows_boltshop::puppetdb_example (
   $query = [from, nodes, ['=', [fact, env], $environment]]. # note that the fact name 'env' is used in the query string
   $selected_nodes = puppetdb_query($query).map() |$target| { $target[certname] }
   run_task('windows_boltshop::helloworld', $selected_nodes, name => "hello")
+  
+  # more info on how to write PuppetDB query strings is here: https://www.puppet.com/docs/puppetdb/7/api/query/tutorial-pql.html
 }
