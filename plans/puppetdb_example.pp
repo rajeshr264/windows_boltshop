@@ -1,4 +1,4 @@
-plan windows_boltshop::update_git (
+plan windows_boltshop::puppetdb_example (
   Enum['dev', 'prod'] $environment,
 ) {
   # Use puppetdb to find the nodes from the “other” team's web cluster
